@@ -15,9 +15,24 @@
     <main>
         <div class="counter-container">
             <p>Количество нажатий: <span id="counter">0</span></p>
+            <p>Добавляется в секунду: <span id="increment-per-second">1</span></p>
             <button id="increment-button">Нажми меня</button>
+            <button id="upgrade-button">Открыть меню прокачки</button>
+        </div>
+        <div id="overlay"></div>
+        <div id="upgrade-menu">
+            <h2>Меню прокачки</h2>
+            <ul>
+                <li><button class="upgrade-option" data-upgrade="1">Увеличить добавление в секунду на 1</button></li>
+                <li><button class="upgrade-option" data-upgrade="2">Увеличить добавление в секунду на 2</button></li>
+                <li><button class="upgrade-option" data-upgrade="5">Увеличить добавление в секунду на 5</button></li>
+                <li><button class="click-upgrade-option" data-click-upgrade="1">Увеличить количество очков за нажатие на 1</button></li>
+                <li><button class="click-upgrade-option" data-click-upgrade="2">Увеличить количество очков за нажатие на 2</button></li>
+                <li><button class="click-upgrade-option" data-click-upgrade="5">Увеличить количество очков за нажатие на 5</button></li>
+            </ul>
+            <button id="close-menu">Закрыть меню</button>
         </div>
     </main>
-    <script src="script.js"></script>
+    <script src="js/ыыы.js"></script>
 </body>
 </html>
