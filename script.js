@@ -3,9 +3,15 @@ document.addEventListener('DOMContentLoaded', (event) => {
     let autoIncrement = 0;
     let incrementPerSecond = 1;  // The fixed increment value per second
     let pointsPerClick = 1;  // Points per click
+    let maxEnergy = 10;
+    let currentEnergy = maxEnergy;
+    const energyRegenRate = 1;  // Energy regenerated per second
 
     const counterElement = document.getElementById('counter');
     const incrementPerSecondElement = document.getElementById('increment-per-second');
+    const pointsPerClickElement = document.getElementById('points-per-click');
+    const energyElement = document.getElementById('energy');
+    const maxEnergyElement = document.getElementById('max-energy');
     const buttonElement = document.getElementById('increment-button');
     const upgradeButton = document.getElementById('upgrade-button');
     const upgradeMenu = document.getElementById('upgrade-menu');
@@ -22,17 +28,42 @@ document.addEventListener('DOMContentLoaded', (event) => {
         incrementPerSecondElement.textContent = incrementPerSecond;
     };
 
-    // Event listener for the button click
-    buttonElement.addEventListener('click', () => {
-        counter += pointsPerClick;
-        updateCounter();
-    });
+    // Function to update the displayed points per click
+    const updatePointsPerClick = () => {
+        pointsPerClickElement.textContent = pointsPerClick;
+    };
+
+    // Function to update the displayed energy
+    const updateEnergy = () => {
+        energyElement.textContent = currentEnergy;
+        maxEnergyElement.textContent = maxEnergy;
+    };
 
     // Set interval to increment the autoIncrement variable every second
     setInterval(() => {
-        autoIncrement += incrementPerSecond;
+        counter += incrementPerSecond;
         updateCounter();
     }, 1000);
+
+    // Set interval to regenerate energy every second
+    setInterval(() => {
+        if (currentEnergy < maxEnergy) {
+            currentEnergy += energyRegenRate;
+            updateEnergy();
+        }
+    }, 1000);
+
+    // Event listener for the button click
+    buttonElement.addEventListener('click', () => {
+        if (currentEnergy > 0) {
+            counter += pointsPerClick;
+            currentEnergy--;
+            updateCounter();
+            updateEnergy();
+        } else {
+            alert("Недостаточно энергии!");
+        }
+    });
 
     // Event listener to open the upgrade menu
     upgradeButton.addEventListener('click', () => {
@@ -68,11 +99,26 @@ document.addEventListener('DOMContentLoaded', (event) => {
         button.addEventListener('click', (event) => {
             const clickUpgradeValue = parseInt(event.target.getAttribute('data-click-upgrade'));
             pointsPerClick += clickUpgradeValue;
+            updatePointsPerClick();
+            upgradeMenu.style.display = 'none';
+            overlay.style.display = 'none';
+        });
+    });
+
+    // Event listener for energy upgrade options (max energy)
+    document.querySelectorAll('.energy-upgrade-option').forEach(button => {
+        button.addEventListener('click', (event) => {
+            const energyUpgradeValue = parseInt(event.target.getAttribute('data-energy-upgrade'));
+            maxEnergy += energyUpgradeValue;
+            updateEnergy();
             upgradeMenu.style.display = 'none';
             overlay.style.display = 'none';
         });
     });
 
     // Initial display update
+    updateCounter();
     updateIncrementPerSecond();
+    updatePointsPerClick();
+    updateEnergy();
 });
