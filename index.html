@@ -2,10 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Счетчик</title>
-    <link rel="stylesheet" href="hamster.css">
+    <link rel="stylesheet" href="css/hamster.css">
 </head>
 <body>
     <header>
@@ -17,7 +16,12 @@
         <div class="counter-container">
             <p>Количество нажатий: <span id="counter">0</span></p>
             <p>Добавляется в секунду: <span id="increment-per-second">1</span></p>
-            <button id="increment-button">Нажми меня</button>
+            <p>Очков за клик: <span id="points-per-click">1</span></p>
+            <p>Энергия: <span id="energy">10</span> / <span id="max-energy">10</span></p>
+            <button id="increment-button" class="btn-class-name">
+                <span class="back"></span>
+                <span class="front"><img src="img/png-transparent-bnb-cryptocurrencies-icon-thumbnail-removebg-preview.png" class="icon"></span>
+            </button>
             <button id="upgrade-button">Открыть меню прокачки</button>
         </div>
         <div id="overlay"></div>
@@ -30,10 +34,12 @@
                 <li><button class="click-upgrade-option" data-click-upgrade="1">Увеличить количество очков за нажатие на 1</button></li>
                 <li><button class="click-upgrade-option" data-click-upgrade="2">Увеличить количество очков за нажатие на 2</button></li>
                 <li><button class="click-upgrade-option" data-click-upgrade="5">Увеличить количество очков за нажатие на 5</button></li>
+                <li><button class="energy-upgrade-option" data-energy-upgrade="10">Увеличить максимальную энергию на 10</button></li>
             </ul>
             <button id="close-menu">Закрыть меню</button>
+            
         </div>
     </main>
-    <script src="script.js"></script>
+    <script src="js/ыыы.js"></script>
 </body>
 </html>
