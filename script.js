@@ -121,4 +121,13 @@ document.addEventListener('DOMContentLoaded', (event) => {
     updateIncrementPerSecond();
     updatePointsPerClick();
     updateEnergy();
+
+
+    document.querySelector('#tchests tr.show-more').onclick = function() {
+        // Prevent default action for double click (on mobile)
+        this.addEventListener('touchstart', function(event) {
+            event.preventDefault();
+        });
+        // Your existing code for showing/hiding table rows goes here
+    };
 });
