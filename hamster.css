@@ -46,35 +46,50 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: #000000;
 }
 
 header {
-    background-color: #4CAF50; /* Green */
+    background-color: #4CAF50;
     color: white;
     width: 100%;
     text-align: center;
     padding: 15px 0;
 }
 
-.counter-container {
-    margin-top: 50px;
-    text-align: center;
+.main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
 }
 
-#increment-button {
-    background-color: #4CAF50;
+.counter-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 80%;
+    max-width: 600px;
+}
+
+.counter-container p {
+    margin: 10px 0;
+}
+
+button {
+    background-color: green;
     color: white;
     border: none;
-    padding: 10px 20px;
+    padding: 12px 24px;
     font-size: 16px;
     cursor: pointer;
     border-radius: 5px;
-    margin-top: 20px;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
 }
 
-#increment-button:hover {
-    background-color: #45a049;
-}
 
 
 
@@ -84,10 +99,17 @@ header {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: white;
+    background-color: #fff;
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     z-index: 1000;
+    text-align: center;
+    border-radius: 8px;
+}
+
+#upgrade-menu h2 {
+    margin-bottom: 15px;
+    font-size: 20px;
 }
 
 #upgrade-menu ul {
@@ -99,6 +121,21 @@ header {
     margin-bottom: 10px;
 }
 
+#upgrade-menu button {
+    background-color: #4CAF50;
+    color: rgb(255, 255, 255);
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+#upgrade-menu button:hover {
+    background-color: #2718ff;
+}
+
 #overlay {
     display: none;
     position: fixed;
@@ -108,4 +145,70 @@ header {
     height: 100%;
     background: rgba(0, 0, 0, 0.5);
     z-index: 500;
+}
+
+@media (max-width: 768px) {
+    .counter-container {
+        width: 90%;
+    }
+}
+.btn-class-name {
+   /* --primary: 255, 90, 120;
+    --secondary: 150, 50, 60;*/
+    width: 160px; /* Увеличил ширину для умещения текста и иконки */
+    height: 100px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    user-select: none;
+    touch-action: manipulation;
+    outline: 10px solid rgba(var(--primary), 0.5);
+    border-radius: 5px; /* Уменьшил радиус для четкости внешнего вида */
+    position: relative;
+    transition: .3s;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-class-name .back {
+    
+    border-radius: 5px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.btn-class-name .front {
+    background: linear-gradient(0deg, rgba(var(--primary), .6) 20%, rgba(var(--primary)) 50%);
+    box-shadow: 0 .5em 1em -0.2em rgba(var(--secondary), .5);
+    border-radius: 5px;
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(var(--secondary));
+    overflow: hidden; /* Обрезаем текст внутри кнопки */
+}
+
+.btn-class-name:active .front {
+    transform: scale(0.95); /* Небольшой эффект уменьшения при активации */
+}
+
+
+
+
+.btn-class-name img {
+    width: 100px; /* Установите нужную ширину */
+    height: auto; /* Поддерживает пропорциональное изменение размеров */
 }
