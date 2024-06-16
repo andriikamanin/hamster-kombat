@@ -1,45 +1,93 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Счетчик</title>
-    <link rel="stylesheet" href="hamster.css">
+    <link rel="stylesheet" href="css/hamster.css">
 </head>
 <body>
     <header>
         <div class="header-content">
-            <h1>Счетчик нажатий</h1>
+            <h1>Binance tap</h1>
         </div>
     </header>
-    <main>
-        <div class="counter-container">
-            <p>Количество нажатий: <span id="counter">0</span></p>
-            <p>Добавляется в секунду: <span id="increment-per-second">1</span></p>
-            <p>Очков за клик: <span id="points-per-click">1</span></p>
-            <p>Энергия: <span id="energy">10</span> / <span id="max-energy">10</span></p>
-            <button id="increment-button" class="btn-class-name">
-                <span class="back"></span>
-                <span class="front"><img src="png-transparent-bnb-cryptocurrencies-icon-thumbnail-removebg-preview.png" class="icon"></span>
-            </button>
-            <button id="upgrade-button">Открыть меню прокачки</button>
+    
+
+    <div class="card">
+        <div class="card__content">
+            <main>
+        
+        
+           
+                <div class="content">
+                 <div class="counter-container">
+                    
+                    
+
+
+
+
+                     <p>Profit per second</p>
+                     <img src="img/png-clipart-dollar-coin-icon-symbol-trademark-yellow-coin-us-dollar-gold-coin-trademark-removebg-preview.png" alt="" class="icon">
+                        +<span id="increment-per-second">1</span>
+                     <p>Earn per tap</p>
+                     <p> <img src="img/png-clipart-dollar-coin-icon-symbol-trademark-yellow-coin-us-dollar-gold-coin-trademark-removebg-preview.png" alt="" class="icon">+<span id="points-per-click">1</span></p>
+                     
+
+                     <p>
+                        
+                        <img src="img/png-clipart-dollar-coin-icon-symbol-trademark-yellow-coin-us-dollar-gold-coin-trademark-removebg-preview.png" alt="" class="icon"><span id="counter">0</span>
+                        
+                    </p>
+
+
+                     <button id="increment-button" class="btn-class-name">
+                         <span class="back"></span>
+                         <span class="front"><img src="img/png-transparent-bnb-cryptocurrencies-icon-thumbnail-removebg-preview.png" class="icon"></span>
+                     </button>
+
+
+                     <p>
+                        
+                        
+                        <span id="energy">10</span> / <span id="max-energy">10</span>
+                    </p>
+
+
+                     <button  id="upgrade-button">
+                        <img src="img/pngimg.com_-_rockets_PNG101054-removebg-preview.png" class="icon">
+                        Boost</button>
+                 </div>
+                 <div id="overlay"></div>
+                 <div id="upgrade-menu">
+                     <h2>Меню прокачки</h2>
+                   
+                     <ul>
+                         <li><button class="upgrade-option" data-upgrade="1">Увеличить добавление в секунду на 1</button></li>
+                         <li><button class="upgrade-option" data-upgrade="2">Увеличить добавление в секунду на 2</button></li>
+                         <li><button class="upgrade-option" data-upgrade="5">Увеличить добавление в секунду на 5</button></li>
+                         <li><button class="click-upgrade-option" data-click-upgrade="1">Увеличить количество очков за нажатие на 1</button></li>
+                         <li><button class="click-upgrade-option" data-click-upgrade="2">Увеличить количество очков за нажатие на 2</button></li>
+                         <li><button class="click-upgrade-option" data-click-upgrade="5">Увеличить количество очков за нажатие на 5</button></li>
+                         <li><button class="energy-upgrade-option" data-energy-upgrade="10">Увеличить максимальную энергию на 10</button></li>
+                     </ul>
+                     <button id="close-menu">Закрыть меню</button>
+     
+     
+                </div>
+              </div>
+                 
+                     
+                 
+         </main>
         </div>
-        <div id="overlay"></div>
-        <div id="upgrade-menu">
-            <h2>Меню прокачки</h2>
-            <ul>
-                <li><button class="upgrade-option" data-upgrade="1">Увеличить добавление в секунду на 1</button></li>
-                <li><button class="upgrade-option" data-upgrade="2">Увеличить добавление в секунду на 2</button></li>
-                <li><button class="upgrade-option" data-upgrade="5">Увеличить добавление в секунду на 5</button></li>
-                <li><button class="click-upgrade-option" data-click-upgrade="1">Увеличить количество очков за нажатие на 1</button></li>
-                <li><button class="click-upgrade-option" data-click-upgrade="2">Увеличить количество очков за нажатие на 2</button></li>
-                <li><button class="click-upgrade-option" data-click-upgrade="5">Увеличить количество очков за нажатие на 5</button></li>
-                <li><button class="energy-upgrade-option" data-energy-upgrade="10">Увеличить максимальную энергию на 10</button></li>
-            </ul>
-            <button id="close-menu">Закрыть меню</button>
-            
-        </div>
-    </main>
-    <script src="script.js"></script>
+        
+        
+    </div>
+
+    
+       
+        
+    <script src="js/ыыы.js"></script>
 </body>
 </html>
